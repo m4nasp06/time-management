@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>HAC Assignments</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <div class="brand">
+          <div>HAC Assignments</div>
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="nav-link-wrapper">
+          <a href="/hac-grades">Reload Grades</a>
+        </div>
+        <div class="nav-link-wrapper">
+          <a href="/home">Home</a>
+        </div>
+        <div class="nav-link-wrapper">
+          <a href="/">Sign Out</a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const menu = document.getElementById("menu");
+    menu.addEventListener("change", () => {
+      const selectedOption = menu.options[menu.selectedIndex].value;
+      if (selectedOption !== "#") {
+        window.location.href = selectedOption;
+      }
+    });
+  </script>
+  
+
+
+<h2 style="font-size: 1.5em;">Current Grades:</h2>
+
+<h2>{{ class1 }}: {{ grade1 }}</h2>
+{% include 'class1.html' %}
+<hr>
+<h2>{{ class2 }}: {{ grade2 }}</h2>
+{% include 'class2.html' %}
+<hr>
+<h2>{{ class3 }}: {{ grade3 }}</h2>
+{% include 'class3.html' %}
+<hr>
+<h2>{{ class4 }}: {{ grade4 }}</h2>
+{% include 'class4.html' %}
+<hr>
+<h2>{{ class5 }}: {{ grade5 }}</h2>
+{% include 'class5.html' %}
+<hr>
+<h2>{{ class6 }}: {{ grade6 }}</h2>
+{% include 'class6.html' %}
+<hr>
+<h2>{{ class7 }}: {{ grade7 }}</h2>
+{% include 'class7.html' %}
+<hr>
+<h2>{{ class8 }}: {{ grade8 }}</h2>
+{% include 'class8.html' %}
+<hr>
+{% endblock %}
